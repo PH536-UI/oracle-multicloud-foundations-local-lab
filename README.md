@@ -8,8 +8,16 @@ Transformar os conceitos do curso em cenários reproduzíveis com Docker, Terraf
 ## Estado inicial
 - Estrutura dos seis módulos criada.
 - Nenhum serviço de nuvem real é acessado.
-- A execução futura será limitada a `terraform init`, `terraform validate` e `terraform plan`.
-- `terraform apply` e `terraform destroy` são proibidos neste repositório.
+- A execução futura usa `terraform init`, `terraform validate`, `terraform plan` e, quando o cenário estiver completamente local, `terraform apply` controlado.
+- `terraform destroy` permanece proibido.
+
+## Apply local controlado
+O apply é permitido somente por `bash scripts/terraform-local.sh apply <diretorio-do-cenario>`. O script exige:
+- arquivo `.local-only-apply` com `approved=true` no diretório do cenário;
+- endpoint ou host explícito somente em `localhost`, `127.0.0.1` ou `::1`;
+- ausência de padrões conhecidos de credenciais reais.
+
+Ainda não existe cenário Terraform executável neste repositório. A regra será usada a partir do primeiro cenário com emulador local.
 
 ## Módulos
 1. Introduction to Multicloud

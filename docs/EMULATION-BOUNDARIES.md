@@ -12,6 +12,7 @@
 
 ## Regras imutáveis
 - Sem contas, credenciais, endpoints públicos ou custos reais.
-- Sem terraform apply ou terraform destroy.
-- Somente imagens Docker e endpoints locais previamente aprovados.
+- `terraform apply` é permitido apenas por `scripts/terraform-local.sh` e somente após validar endpoints locais explícitos.
+- Cada cenário que usar apply deve ter `.local-only-apply` contendo exatamente `approved=true`.
+- `terraform destroy` é proibido.
 - Evidências publicáveis devem ser sanitizadas.
