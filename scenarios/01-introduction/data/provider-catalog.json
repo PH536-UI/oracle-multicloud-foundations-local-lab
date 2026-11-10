@@ -1,0 +1,10 @@
+{
+  "scenario": "RetailFlow",
+  "providers": [
+    {"name": "AWS", "study_role": "application workload"},
+    {"name": "Azure", "study_role": "enterprise identity"},
+    {"name": "Google Cloud", "study_role": "analytics workload"},
+    {"name": "Oracle Cloud Infrastructure", "study_role": "database and multicloud services"}
+  ],
+  "data_classification": "synthetic-only"
+}
